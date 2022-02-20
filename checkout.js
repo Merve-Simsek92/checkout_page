@@ -6,7 +6,8 @@ console.log(buttonMinus2);
 let all=document.getElementsByTagName("button")
 console.log(all);
 div1=document.getElementsByClassName("product")[0];
-
+div2=document.getElementsByClassName("product")[1];
+div3=document.getElementsByClassName("product")[2];
 
 
 
@@ -57,10 +58,18 @@ sonuc1.innerText=result1;
 })
 buttonMinus2.addEventListener("click",()=>{
     result2--;
+    if(result2==0){
+        alert("are you sure?")
+        div2.remove()
+     }
     sonuc2.innerText=result2;
     })
  buttonMinus3.addEventListener("click",()=>{
         result3--;
+        if(result3==0){
+            alert("are you sure?")
+            div3.remove()
+         }
         sonuc3.innerText=result3;
         })
   buttonPlus1.addEventListener("click",()=>{
