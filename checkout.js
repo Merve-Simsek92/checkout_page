@@ -1,0 +1,95 @@
+let buttonMinus1=document.querySelectorAll(".quantity-controller")[0].firstElementChild
+let buttonMinus2=document.querySelectorAll(".quantity-controller")[1].firstElementChild
+let buttonMinus3=document.querySelectorAll(".quantity-controller")[2].firstElementChild
+console.log(buttonMinus2);
+
+let all=document.getElementsByTagName("button")
+console.log(all);
+
+let buttonPlus1=document.querySelectorAll(".quantity-controller")[0].lastElementChild
+let buttonPlus2=document.querySelectorAll(".quantity-controller")[1].lastElementChild
+let buttonPlus3=document.querySelectorAll(".quantity-controller")[2].lastElementChild
+console.log(buttonPlus1);
+console.log(buttonMinus1);
+let buttonPlus=document.getElementsByClassName("fas fa-plus");
+console.log(buttonPlus);
+let sonuc1=document.querySelectorAll("#product-quantity")[0]
+let sonuc2=document.querySelectorAll("#product-quantity")[1]
+let sonuc3=document.querySelectorAll("#product-quantity")[2]
+console.log(sonuc1);
+
+let sonucSubtotal=document.querySelectorAll(".buy-detail")[0].lastElementChild
+console.log(sonucSubtotal);
+
+let sonucTax=document.querySelectorAll(".buy-detail")[1].lastElementChild
+console.log(sonucTax);
+
+let sonucShipping=document.querySelectorAll(".buy-detail")[2].lastElementChild
+let sonuctotal=document.querySelectorAll(".buy-detail")[3].lastElementChild
+let result1=0;
+let result2=0;
+let result3=0;
+let subtotal=0;
+let tax=0;
+let shipping=0;
+let total=0;
+buttonMinus1.addEventListener("click",()=>{
+result1--;
+sonuc1.innerText=result1;
+})
+buttonMinus2.addEventListener("click",()=>{
+    result2--;
+    sonuc2.innerText=result2;
+    })
+ buttonMinus3.addEventListener("click",()=>{
+        result3--;
+        sonuc3.innerText=result3;
+        })
+  buttonPlus1.addEventListener("click",()=>{
+            result1++;
+            sonuc1.innerText=result1;
+            })
+ buttonPlus2.addEventListener("click",()=>{
+                result2++;
+                sonuc2.innerText=result2;
+                })
+buttonPlus3.addEventListener("click",()=>{
+                    result3++;
+                    sonuc3.innerText=result3;
+                    })
+            
+const calculater=()=>{
+
+if(result1+result2+result3<1){
+  subtotal=0;
+tax=0;
+shipping=0;
+total=0;
+
+}else{
+shipping=15;
+subtotal=Number(result1)*25.98 + Number(result2)*45.98 +Number(result3)*74.99;
+tax=Number(subtotal)*0.18;
+total=shipping+subtotal+tax;
+
+sonucSubtotal.innerText=subtotal.toFixed(2);
+sonucTax.innerText=tax.toFixed(2);
+sonucShipping.innerText=shipping;
+sonuctotal.innerText=total.toFixed(2)
+
+
+}
+
+
+
+}
+[...all].forEach(element=>{
+    element.addEventListener("click",calculater)
+})
+let removelist=document.getElementsByClassName("remove-product");
+console.log(removelist);
+[...removelist].forEach(element=>{
+    element.addEventListener("click",()=>{
+    element.parentElement.parentElement.parentElement.remove()
+})
+})
