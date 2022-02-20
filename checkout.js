@@ -49,8 +49,11 @@ let total=0;
 buttonMinus1.addEventListener("click",()=>{
 result1--;
 if(result1==0){
-    alert("are you sure?")
-    div1.remove()
+    x=prompt("are you sure? yes or no");
+   if(x=="yes"){
+    div1.remove()}else{
+        result1=1;
+    }
  }
 
 sonuc1.innerText=result1;
@@ -59,16 +62,22 @@ sonuc1.innerText=result1;
 buttonMinus2.addEventListener("click",()=>{
     result2--;
     if(result2==0){
-        alert("are you sure?")
-        div2.remove()
+        x=prompt("are you sure? yes or no");
+        if(x=="yes"){
+         div1.remove()}else{
+            result2=1;
+        }
      }
     sonuc2.innerText=result2;
     })
  buttonMinus3.addEventListener("click",()=>{
         result3--;
         if(result3==0){
-            alert("are you sure?")
-            div3.remove()
+            x=prompt("are you sure? yes or no");
+            if(x=="yes"){
+             div1.remove()}else{
+                 result3=1;
+             }
          }
         sonuc3.innerText=result3;
         })
