@@ -42,10 +42,10 @@ let sonuctotal=document.querySelectorAll(".buy-detail")[3].lastElementChild
 let result1=1;
 let result2=1;
 let result3=1;
-let subtotal=0;
-let tax=0;
-let shipping=0;
-let total=0;
+let subtotal=(result1*25.98 + result2*45.98 + result3*74.99)toFixed(2);
+let tax=(subtotal*0.18).toFixed(2);
+let shipping=15;
+let total=(subtotal + tax +shipping).toFixed(2) ;
 buttonMinus1.addEventListener("click",()=>{
 result1--;
 if(result1==0){
