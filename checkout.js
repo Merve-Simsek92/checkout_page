@@ -74,7 +74,7 @@ buttonMinus2.addEventListener("click",()=>{
  buttonMinus3.addEventListener("click",()=>{
         result3--;
         if(result3==0){
-            x=prompt("Are you sure?");
+            x=confirm("Are you sure?");
             if(x==true){
              div1.remove()}else{
                  result3=1;
@@ -137,8 +137,9 @@ let removelist=document.getElementsByClassName("remove-product");
 console.log(removelist);
 [...removelist].forEach(element=>{
     element.addEventListener("click",()=>{
-        
-    element.parentElement.parentElement.parentElement.remove()
+        x=confirm("Are you sure?");
+        if(x==true){
+    element.parentElement.parentElement.parentElement.remove()}
 })
 })
 
