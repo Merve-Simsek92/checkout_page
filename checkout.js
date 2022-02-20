@@ -120,9 +120,9 @@ sonucSubtotal.innerText=subtotal.toFixed(2);
 sonucTax.innerText=tax.toFixed(2);
 sonucShipping.innerText=shipping;
 sonuctotal.innerText=total.toFixed(2)
-product1.innerText=Number(result1)*25.98.toFixed(2);
-product2.innerText=Number(result2)*45.98 .toFixed(2);
-product3.innerText=Number(result3)*74.99.toFixed(2)
+product1.innerText=(Number(result1)*25.98).toFixed(2);
+product2.innerText=(Number(result2)*45.98).toFixed(2);
+product3.innerText=(Number(result3)*74.99).toFixed(2)
 
 }
 
