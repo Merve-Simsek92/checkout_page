@@ -5,6 +5,11 @@ console.log(buttonMinus2);
 
 let all=document.getElementsByTagName("button")
 console.log(all);
+div1=document.getElementsByClassName("product")[0];
+
+
+
+
 
 let buttonPlus1=document.querySelectorAll(".quantity-controller")[0].lastElementChild
 let buttonPlus2=document.querySelectorAll(".quantity-controller")[1].lastElementChild
@@ -17,6 +22,13 @@ let sonuc1=document.querySelectorAll("#product-quantity")[0]
 let sonuc2=document.querySelectorAll("#product-quantity")[1]
 let sonuc3=document.querySelectorAll("#product-quantity")[2]
 console.log(sonuc1);
+
+
+let product1=document.getElementsByClassName("product-line-price")[0];
+let product2=document.getElementsByClassName("product-line-price")[1]
+let product3=document.getElementsByClassName("product-line-price")[2]
+console.log(product1);
+
 
 let sonucSubtotal=document.querySelectorAll(".buy-detail")[0].lastElementChild
 console.log(sonucSubtotal);
@@ -35,7 +47,13 @@ let shipping=0;
 let total=0;
 buttonMinus1.addEventListener("click",()=>{
 result1--;
+if(result1==0){
+    alert("are you sure?")
+    div1.remove()
+ }
+
 sonuc1.innerText=result1;
+
 })
 buttonMinus2.addEventListener("click",()=>{
     result2--;
@@ -57,7 +75,10 @@ buttonPlus3.addEventListener("click",()=>{
                     result3++;
                     sonuc3.innerText=result3;
                     })
-            
+      
+                    
+
+
 const calculater=()=>{
 
 if(result1+result2+result3<1){
@@ -66,7 +87,12 @@ tax=0;
 shipping=0;
 total=0;
 
-}else{
+
+}
+
+
+
+else{
 shipping=15;
 subtotal=Number(result1)*25.98 + Number(result2)*45.98 +Number(result3)*74.99;
 tax=Number(subtotal)*0.18;
@@ -76,7 +102,9 @@ sonucSubtotal.innerText=subtotal.toFixed(2);
 sonucTax.innerText=tax.toFixed(2);
 sonucShipping.innerText=shipping;
 sonuctotal.innerText=total.toFixed(2)
-
+product1.innerText=Number(result1)*25.98.toFixed(2);
+product2.innerText=Number(result2)*45.98 .toFixed(2);
+product3.innerText=Number(result3)*74.99.toFixed(2)
 
 }
 
@@ -90,6 +118,9 @@ let removelist=document.getElementsByClassName("remove-product");
 console.log(removelist);
 [...removelist].forEach(element=>{
     element.addEventListener("click",()=>{
+        
     element.parentElement.parentElement.parentElement.remove()
 })
 })
+
+
