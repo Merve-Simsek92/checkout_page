@@ -38,9 +38,9 @@ console.log(sonucTax);
 
 let sonucShipping=document.querySelectorAll(".buy-detail")[2].lastElementChild
 let sonuctotal=document.querySelectorAll(".buy-detail")[3].lastElementChild
-let result1=0;
-let result2=0;
-let result3=0;
+let result1=1;
+let result2=1;
+let result3=1;
 let subtotal=0;
 let tax=0;
 let shipping=0;
